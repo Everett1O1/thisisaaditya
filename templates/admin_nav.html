@@ -1,0 +1,28 @@
+<style>
+  .admin{
+    border: 2px solid #5D3B65;
+    background-color: transparent;
+    padding: 6px 30px;
+    cursor: pointer;
+    color: #5D3B65;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  .admin:hover {
+    background-color: #5D3B65;
+    color: white;
+  }
+</style>
+<nav class="navbar shadow-sm fixed-top bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="{{ url_for('static', filename='logo.svg') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      Bachelor's Den
+    </a>
+    <a href="/logout">
+      <button class="admin">Logout</button>
+    </a>
+  </div>
+</nav>
+<div style="height: 56px;"></div>

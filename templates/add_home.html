@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin - Add Homes</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <style>
+    body {
+      margin: 0;
+      align-content: center;
+    }
+
+    form {
+      max-width: 400px;
+      text-align: left;
+      margin-left: 450px;
+    }
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #5D3B65;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #432F48;
+      transition: 0.5s;
+    }
+    .home{
+      text-align: center;
+      margin-top: 10px;
+    }
+    a{
+      text-decoration: none;
+      color: #5D3B65;
+      cursor: pointer;
+    }
+    a:hover{
+      color: #432F48;
+    }
+    @media screen and (max-width: 480px) {
+      form {
+        margin-left: 0px;
+      }
+    }
+  </style>
+  <body>
+    {% include 'admin_nav.html' %}
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">Add Homes</h1>
+      <form action="/home/saved" method="post">
+        <div class="mb-2">
+          <label>House Name</label><br>
+          <input type="text" name="house" placeholder="House Name" required>
+        </div>
+        <div class="mb-2">
+          <label>Location</label><br>
+          <input type="text" name="location" placeholder="Location" required>
+        </div>
+        <div class="mb-2">
+          <label>Rent</label><br>
+          <input type="text" name="rent" placeholder="Rent" required>
+        </div>
+        <div class="mb-2">
+          <label>Currency</label><br>
+          <input type="text" name="currency" placeholder="Currency" required>
+        </div>
+        <div class="mb-2">
+          <label>Owner Details</label><br>
+          <textarea name="owner_details"></textarea>
+        </div>
+        <div class="mb-2">
+          <label>Requirements</label><br>
+          <textarea name="requirements"></textarea>
+        </div>
+        <input type="submit">
+      </form>
+      <div class="home">
+        <a href="/admin">Go to Admin</a>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

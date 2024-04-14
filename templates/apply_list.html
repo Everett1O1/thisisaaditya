@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .view-button {
+      border: 2px solid #5D3B65;
+      background-color: transparent;
+      padding: 15px 40px;
+      cursor: pointer;
+      color: #5D3B65;
+      transition: background-color 0.3s;
+      border-radius: 10px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .view-button:hover {
+      background-color: #5D3B65;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: flex; justify-content: space-between; margin-bottom: 16px; border-bottom: 2px solid #e1e1e1; padding: 8px;">
+    <div style="flex: 1;">
+      <h4 style="color: rgb(120, 120, 120); margin-bottom: 4px;">{{appl['name']}}</h4>
+      <div><b>Phone Number:</b> {{appl['phone_number']}}</div>
+      <div><b>Email:</b> {{appl['email']}}</div>
+      {% if 'details' in appl and appl['details'] %}
+        <div><b>Details:</b> {{appl['details']}}</div>
+      {% endif %}
+      {% if 'people' in appl and appl['people'] %}
+        <div><b>People Info:</b> {{appl['people']}}</div>
+      {% endif %}
+      {% if 'aadhar_link' in appl and appl['aadhar_link']%}
+        <div><b>Aadhar:</b> {{appl['aadhar_link']}}</div>
+      {% endif %}
+    </div>
+    <div style="flex: 0;">
+      <a href="mailto:{{appl['email']}}" type="button" class="view-button">Contact Them</a>
+    </div>
+  </div>
+</body>
+</html>

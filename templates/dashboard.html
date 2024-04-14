@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <style>
+    body{
+      height: 100vh;
+    }
+    .container{
+      display: grid;
+    }
+    .add-button {
+      display: inline-block;
+      padding: 10px 20px; 
+      background-color: #5D3B65; 
+      color: #fff; 
+      border: none;
+      border-radius: 5px; 
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px; 
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 5px;
+    }
+    .add-button:hover {
+      background-color: #432F48;
+      transition: 0.5s;
+    }
+    .admin-button {
+      text-align: center;
+      border: 2px solid #5D3B65;
+      background-color: transparent;
+      padding: 10px 20px;
+      cursor: pointer;
+      color: #5D3B65;
+      transition: background-color 0.3s;
+      border-radius: 10px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .admin-button:hover {
+      background-color: #5D3B65;
+      color: white;
+    }
+  </style>
+  <body>
+    {% include 'admin_nav.html' %}
+    <div class = "container">
+      <h1 class="text-center mt-2 mb-4">Dashboard</h1>
+      <h3 class="text-center mt-2 mb-4">{{ apply | length }} People information are shown</h3>
+      <a href="/home/add" type="button" class="add-button"">Add More Homes</a>
+      
+      {% for appl in apply %}
+        {% include 'apply_list.html' %}
+      {% endfor %}
+      <a href="/admin" type="button" class="admin-button"">Go to Admin page</a>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>
